@@ -1,4 +1,20 @@
 <%= current_user.email %>
 
-<h2> Number of workshops </h2>
-<%= 
+<h2>Workshops </h2>
+<%= link_to "Add workshop", new_workshop_path %>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Capacity</th>
+    <th>Status</th>
+  </tr>
+  <% @workshops.each do |ws| %>
+  <tr>
+    <td><%= link_to ws.name, workshop_path(ws) %></td>
+    <td><%= ws.description %></td>
+    <td><%= ws.capacity %></td>
+    <td><%= ws.status %></td>
+  </tr>
+  <% end %>
+</table>

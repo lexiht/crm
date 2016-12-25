@@ -1,0 +1,12 @@
+<h1>Create a workshop</h1>
+<%= form_for workshop do |ws| %>
+  <%= ws.label :name %>
+  <%= ws.text_field :name %>
+  <%= ws.label :description %>
+  <%= ws.text_area :description %>
+  <%= ws.label :capacity %>
+  <%= ws.number_field :capacity %>
+  <%= ws.label :status %>
+  <%= ws.select :status, ["Active", "Inactive", "Maintainance"] %>
+  <%= ws.submit %>
+<% end %>
