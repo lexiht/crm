@@ -1,20 +1,23 @@
 <%= current_user.email %>
 
 <h2>Workshops </h2>
-<%= link_to "Add workshop", new_workshop_path %>
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Capacity</th>
-    <th>Status</th>
-  </tr>
+<%= link_to "Add workshop", new_workshop_path, class: "btn btn-primary" %>
+
+<div class="space"> </div>
+
+<div class="row">
   <% @workshops.each do |ws| %>
-  <tr>
-    <td><%= link_to ws.name, workshop_path(ws) %></td>
-    <td><%= ws.description %></td>
-    <td><%= ws.capacity %></td>
-    <td><%= ws.status %></td>
-  </tr>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src="..." alt="...">
+        <div class="caption">
+          <h3><%= link_to ws.name.to_s, workshop_path(ws) %></h3>
+          <p><%= ws.description %></p>
+          <p>Status: <%= ws.status %> </p>
+          <p>Capacity: <%= ws.capacity %> </p>
+          <p><%= link_to 'Delete', workshop_path(ws), class: 'btn btn-danger', method: :delete %></p>
+        </div>
+      </div>
+    </div>
   <% end %>
-</table>
+</div>
