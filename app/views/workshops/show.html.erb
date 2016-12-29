@@ -1,5 +1,7 @@
+<%= link_to 'Dashboard', dashboard_path, class: 'btn btn-primary' %>
 <h1><%= @workshop.name %></h1>
 <p><%= @workshop.description %></p>
 <p><%= @workshop.capacity %></p>
 <p><%= @workshop.status %></p>
 <p><%= link_to 'Delete', workshop_path(@workshop), class: 'btn btn-danger', method: :delete %></p>
+<p><%= link_to 'Edit', edit_workshop_path(@workshop), class: 'btn btn-primary' %></p>
