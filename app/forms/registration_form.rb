@@ -19,7 +19,8 @@ class RegistrationForm < Reform::Form
     true
   end
 
-  def authenticatable_salt; end
+  def authenticatable_salt
+  end
 
   def persisted?
     true
