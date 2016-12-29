@@ -5,3 +5,25 @@
 <p><%= @workshop.status %></p>
 <p><%= link_to 'Delete', workshop_path(@workshop), class: 'btn btn-danger', method: :delete %></p>
 <p><%= link_to 'Edit', edit_workshop_path(@workshop), class: 'btn btn-primary' %></p>
+
+<h2>Projects</h2>
+<%= link_to "Add project", new_workshop_project_path(@workshop), class: "btn btn-primary" %>
+
+<div class="space"> </div>
+
+<div class="row">
+  <% @projects.each do |project| %>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3><%= link_to project.name.to_s, project_path(project) %></h3>
+          <p><%= project.description %></p>
+          <p>Status: <%= project.reference %> </p>
+          <p>Capacity: <%= project.due_date %> </p>
+          <p><%= link_to 'Delete', project_path(project), class: 'btn btn-danger', method: :delete %></p>
+          <p><%= link_to 'Edit', edit_project_path(project), class: 'btn btn-primary' %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

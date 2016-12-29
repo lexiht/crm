@@ -12,6 +12,7 @@ class WorkshopsController < ApplicationController
   end
 
   def show
+    @projects = @workshop.projects
   end
 
   def edit

@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   get 'dashboard', to: "dashboard#index"
 
-  resources :workshops, shallow: true
+  resources :workshops, shallow: true do
+    resources :projects, shallow: true
+  end
 
 end

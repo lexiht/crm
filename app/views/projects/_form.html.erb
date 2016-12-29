@@ -1,0 +1,12 @@
+<h1>Create a project</h1>
+<%= form_for project do |project| %>
+  <%= project.label :name %>
+  <%= project.text_field :name %>
+  <%= project.label :description %>
+  <%= project.text_area :description %>
+  <%= project.label :reference %>
+  <%= project.text_field :reference %>
+  <%= project.label :due_date %>
+  <%= project.date_field :due_date %>
+  <%= project.submit %>
+<% end %>
