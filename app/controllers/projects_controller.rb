@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_workshop, except: [:show]
+  before_action :set_workshop, except: [:show, :edit, :update]
   before_action :set_project
 
   def new
@@ -13,6 +13,15 @@ class ProjectsController < ApplicationController
 
   def show
 
+  end
+
+  def edit
+    session[:redirect_to] = request.referer
+  end
+
+  def update
+    @project.update(project_params)
+    redirect_to session.delete(:redirect_to)
   end
 
   def destroy
