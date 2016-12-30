@@ -1,0 +1,8 @@
+<%= link_to 'Dashboard', dashboard_path, class: 'btn btn-primary' %>
+<%= link_to 'Workshop', workshop_path(@project.workshop), class: 'btn btn-primary' %>
+<h1><%= @project.name %></h1>
+<p><%= @project.description %></p>
+<p><%= @project.reference %></p>
+<p><%= @project.due_date %></p>
+<p><%= link_to 'Delete', project_path(@project, workshop_id: @project.workshop.id), class: 'btn btn-danger', method: :delete %></p>
+<p><%= link_to 'Edit', edit_project_path(@project), class: 'btn btn-primary' %></p>

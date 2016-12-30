@@ -20,7 +20,7 @@
           <p><%= project.description %></p>
           <p>Status: <%= project.reference %> </p>
           <p>Capacity: <%= project.due_date %> </p>
-          <p><%= link_to 'Delete', project_path(project), class: 'btn btn-danger', method: :delete %></p>
+          <p><%= link_to 'Delete', project_path(project, workshop_id: @workshop.id), class: 'btn btn-danger', method: :delete %></p>
           <p><%= link_to 'Edit', edit_project_path(project), class: 'btn btn-primary' %></p>
         </div>
       </div>
