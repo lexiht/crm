@@ -25,6 +25,7 @@ gem 'devise'
 # User Reform for form-validation and FormObjects
 gem 'reform'
 gem 'reform-rails'
+gem 'cancancan'
 
 gem 'bootstrap-sass'
 # Use jquery as the JavaScript library

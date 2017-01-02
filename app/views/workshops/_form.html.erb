@@ -8,5 +8,7 @@
   <%= ws.number_field :capacity %>
   <%= ws.label :status %>
   <%= ws.select :status, ["Active", "Inactive", "Maintainance"] %>
+  <%= label_tag :staff %>
+  <%= select_tag :staff, options_for_select(staffs_array) %>
   <%= ws.submit %>
 <% end %>

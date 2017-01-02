@@ -1,5 +1,6 @@
 class WorkshopsController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
   before_action :set_workshop, only: [:show, :destroy, :edit, :update]
 
   def new
@@ -7,7 +8,9 @@ class WorkshopsController < ApplicationController
   end
 
   def create
+    staff = User.find_by(email: params[:staff])
     @workshop = current_user.business.workshops.create(workshop_params)
+    @workshop.users << staff
     redirect_to dashboard_path
   end
 
@@ -20,7 +23,9 @@ class WorkshopsController < ApplicationController
   end
 
   def update
+    staff = User.find_by(email: params[:staff])
     @workshop.update(workshop_params)
+    @workshop.users << staff
     redirect_to session.delete(:redirect_to)
   end
 
